@@ -92,7 +92,7 @@ io.on("connection", (socket) => {
     io.to(to).emit("peer:nego:final", { from: socket.id, ans });
   });
 });
-
-app.listen(8800,()=>{
-    console.log("backend server is running on port 8800")
+const port = process.env.PORT || 8800; 
+app.listen(port,()=>{
+    console.log(`backend server is running on port ${port}`)
 })
